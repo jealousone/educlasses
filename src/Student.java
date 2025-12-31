@@ -1,28 +1,11 @@
-class Student {
-    private int id;
-    private String name;
+import java.util.*;
+
+class Student extends Person {
     private int age;
 
     public Student(int id, String name, int age) {
-        this.id = id;
-        this.name = name;
+        super(id, name);
         this.age = age;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getAge() {
@@ -33,7 +16,13 @@ class Student {
         this.age = age;
     }
 
+    @Override
     public String getInfo() {
-        return "Student: Name: " + name + ", Age: " + age + " years.";
+        return "Student: ID=" + getId() + ", Name=" + getName() + ", Age=" + age;
+    }
+
+    @Override
+    public String toString() {
+        return getInfo();
     }
 }
